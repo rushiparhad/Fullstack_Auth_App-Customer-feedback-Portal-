@@ -1,0 +1,11 @@
+import { Router } from "express";
+import { protect, adminOnly } from "../middleware/authMiddleware.js";
+import { createFeedback, listByProduct, listAll, updateStatus, adminReply, removeFeedback } from "../controllers/feedbackController.js";
+const router = Router();
+router.post("/", protect, createFeedback);
+router.get("/product/:productId", protect, listByProduct);
+router.delete("/:id", protect, removeFeedback);
+router.get("/", protect, adminOnly, listAll);
+router.patch("/:id/status", protect, adminOnly, updateStatus);
+router.post("/:id/reply", protect, adminOnly, adminReply);
+export default router;
