@@ -22,3 +22,6 @@ npm run dev
 Login as admin (seeded):
 - Email: `rushinparhad@gmail.com`
 - Password: `rushi`
+
+
+Email notification is sent to user(customer) if Admin replies on anyones feedback.
